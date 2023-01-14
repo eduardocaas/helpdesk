@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Tecnico } from 'src/app/models/tecnico';
 
+
 @Component({
   selector: 'app-tecnico-list',
   templateUrl: './tecnico-list.component.html',
