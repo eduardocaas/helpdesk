@@ -15,7 +15,7 @@ export class TecnicoListComponent implements OnInit {
     {id: 1, nome: 'Eduardo', cpf: '123.456.789-10', email: 'eduardo@email.com', senha: 'abc123', perfis: ['0'], dataCriacao: '13/01/2023'},
   ];
 
-  displayedColumns: string[] = ['id', 'nome', 'cpf', 'senha', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'cpf', 'email', 'acoes'];
   dataSource = new MatTableDataSource<Tecnico>(this.ELEMENT_DATA);
 
   constructor() { }
