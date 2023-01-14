@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
 
   logar() {
     this.toast.error('Usuário ou senha inválidos', 'Login');
+    this.creds.senha = '';
   }
 
   validaCampos(): boolean {
