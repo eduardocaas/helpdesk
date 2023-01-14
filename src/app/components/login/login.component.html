@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="container">
+  <form class="form mat-elevation-z8">
+    <h1>Help Desk</h1>
+    <img src="assets/img/login-image.svg" alt="Login Help Desk">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input [(ngModel)]="creds.email" name="email" matInput placeholder="nome@email.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input [(ngModel)]="creds.senha" name="senha" matInput [type]="hide ? 'password' : 'text'" placeholder="Ex. 123" [formControl]="senha" required>
+      <mat-error *ngIf="senha.invalid">{{getErrorMessagePassword()}}</mat-error>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button [disabled]="!validaCampos()" mat-stroked-button color="primary" class="full-width">Entrar</button>
+  </form>
+</div>
