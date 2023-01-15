@@ -1,0 +1,36 @@
+.container {
+  width: 35rem;
+  margin: auto;
+  padding: 1rem 1rem 3rem 1rem;
+  background-color: rgb(235, 235, 235);
+  border-radius: .2rem;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.section {
+  margin: 1rem 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btns {
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  height: 9rem;
+  margin: auto;
+}
+
+button {
+  margin-right: .3rem;
+  width: 100%;
+}
+
