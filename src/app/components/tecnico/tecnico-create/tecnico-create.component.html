@@ -1,1 +1,50 @@
-<p>tecnico-create works!</p>
+<div class="container mat-elevation-z8">
+  <form action="" class="form">
+    <h1>Cadastrar Técnico</h1>
+    <img class="fullWidth" src="assets/img/tecnico-create.svg" alt="HelpDesk">
+
+    <section class="section">
+      <mat-checkbox color="primary" class="margin">Admin</mat-checkbox>
+      <mat-checkbox color="success" class="margin">Cliente</mat-checkbox>
+      <mat-checkbox color="accent" class="margin">Técnico</mat-checkbox>
+    </section>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Ex. Fulano">
+        <mat-icon matSuffix>account_circle</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input matInput placeholder="Ex. 000.111.222-33">
+        <mat-icon matSuffix>pin</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Ex. nome@email.com">
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input type="password" matInput placeholder="Ex. 123">
+        <mat-icon matSuffix>password</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <div class="btns">
+      <button mat-stroked-button color="primary">Cadastrar</button>
+      <button mat-stroked-button color="warn">Cancelar</button>
+    </div>
+
+  </form>
+</div>
