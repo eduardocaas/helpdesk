@@ -30,7 +30,6 @@ export class TecnicoCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
   create(): void {
     this.service.create(this.tecnico).subscribe(resposta => {
       this.toast.success('Técnico criado com sucesso!', 'Cadastro', { timeOut: 6000});
@@ -51,6 +50,19 @@ export class TecnicoCreateComponent implements OnInit {
     } else {
       this.tecnico.perfis.push(perfil);
     } 
+  }
+
+  limparCampos(): void {
+    let checks = document.querySelectorAll('input[type=checkbox]') as HTMLInputElement[] | any;
+    checks.forEach(check => {
+      check.checked = false;
+    });
+    this.tecnico.nome = '';
+    this.tecnico.cpf = '';
+    this.tecnico.email = '';
+    this.tecnico.senha = '';
+    this.tecnico.perfis = [];
+
   }
 
   validaCampos(): boolean {

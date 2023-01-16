@@ -12,6 +12,15 @@
   margin: 0 0 10px 0;
 }
 
+.edit {
+  color: rgb(61, 113, 209);
+}
+
+.delete {
+  color: rgb(211, 97, 97);
+}
+
 table {
   width: 100%;
 }
+

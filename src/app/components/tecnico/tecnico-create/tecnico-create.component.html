@@ -1,6 +1,8 @@
 <div class="container mat-elevation-z8">
   <form action="" class="form">
-    <h1>Cadastrar Técnico</h1>
+    <button routerLink="../" mat-stroked-button color="primary">Retornar</button>
+    <h1>Cadastro de Técnico</h1>
+    
     <img class="fullWidth" src="assets/img/tecnico-create.svg" alt="HelpDesk">
 
     <section class="section">
@@ -73,8 +75,8 @@
     </p>
 
     <div class="btns">
-      <button (click)="create()" [disabled]="!validaCampos()" mat-stroked-button color="primary">Cadastrar</button>
-      <button routerLink="../" mat-stroked-button color="warn">Retornar</button>
+      <button (click)="create()" [disabled]="!validaCampos()" class="btnForm" mat-stroked-button color="primary">Cadastrar</button>
+      <button (click)="limparCampos()" mat-stroked-button class="btnForm" color="warn">Limpar</button>
     </div>
 
   </form>
