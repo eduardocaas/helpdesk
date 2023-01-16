@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { Tecnico } from 'src/app/models/tecnico';
+import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
   selector: 'app-tecnico-create',
@@ -8,20 +11,52 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class TecnicoCreateComponent implements OnInit {
 
-  nome: FormControl = new FormControl(null, [Validators.required, Validators.minLength(5), Validators.maxLength(50)]);
+  tecnico: Tecnico = {
+    nome: '',
+    cpf: '',
+    email: '',
+    senha: '',
+    perfis: [],
+    dataCriacao: ''
+  };
+
+  nome: FormControl = new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]);
   cpf: FormControl =  new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11)]);
   email: FormControl = new FormControl(null, [Validators.required, Validators.email, Validators.maxLength(80)]);
   senha: FormControl =  new FormControl(null, [Validators.required, Validators.minLength(5), Validators.maxLength(50)]);
   
-  constructor() { }
+  constructor(private service: TecnicoService, private toast: ToastrService) { }
 
   ngOnInit(): void {
+  }
+
+  
+  create(): void {
+    this.service.create(this.tecnico).subscribe(resposta => {
+      this.toast.success('Técnico criado com sucesso!', 'Cadastro', { timeOut: 6000});
+    }, err => {
+      if(err.error.errors) {
+        err.error.errors.forEach(element => {
+          this.toast.error(element.message, 'Erro', { timeOut: 6000});
+        });
+      } else {
+        this.toast.error(err.error.message, 'Erro', { timeOut: 6000});
+      }     
+    });
+  }
+
+  addPerfil(perfil: any): void {
+    if (this.tecnico.perfis.includes(perfil)) {
+      this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1);
+    } else {
+      this.tecnico.perfis.push(perfil);
+    } 
   }
 
   validaCampos(): boolean {
     return this.nome.valid && this.cpf.valid && this.email.valid && this.senha.valid;
   }
-
+  
   getErrorMessageNome(){
     if (this.nome.hasError('required')) {
       return 'Você deve informar um nome';
@@ -30,7 +65,7 @@ export class TecnicoCreateComponent implements OnInit {
       return 'O nome deve ter no máximo 50 caracteres';
     }
     if (this.nome.hasError('minlength')) {
-      return 'O nome deve ter no mínimo 5 caracteres';
+      return 'O nome deve ter no mínimo 3 caracteres';
     }
     return null;
   }
