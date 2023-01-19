@@ -10,7 +10,7 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
   templateUrl: './tecnico-update.component.html',
   styleUrls: ['./tecnico-update.component.css']
 })
-export class TecnicoUpdateComponent {
+export class TecnicoUpdateComponent implements OnInit {
 
   tecnico: Tecnico = {
     nome: '',

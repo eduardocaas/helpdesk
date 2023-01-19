@@ -1,1 +1,68 @@
-<p>tecnico-delete works!</p>
+<div class="container mat-elevation-z8">
+  <form action="" class="form">
+    <button routerLink="../../" mat-stroked-button color="primary">Retornar</button>
+    <h1>Remoção de Técnico</h1>
+    
+    <img class="fullWidth" src="assets/img/tecnico-create.svg" alt="HelpDesk">
+
+    <section class="section">
+      <mat-checkbox [disabled]="true" color="primary" class="margin">Admin</mat-checkbox>
+      <mat-checkbox [disabled]="true" color="success" class="margin">Cliente</mat-checkbox>
+      <mat-checkbox [disabled]="true" color="accent" class="margin">Técnico</mat-checkbox>
+    </section>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input 
+        [(ngModel)]="tecnico.nome"
+        name="nome"
+        [disabled]="true"
+        matInput>
+        <mat-icon matSuffix>account_circle</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input 
+        [(ngModel)]="tecnico.cpf"
+        name="cpf" 
+        [disabled]="true"
+        matInput>
+        <mat-icon matSuffix>pin</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input 
+        [(ngModel)]="tecnico.email"
+        name="email" 
+        required 
+        [disabled]="true"
+        matInput>
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input 
+        [(ngModel)]="tecnico.senha"
+        name="senha"
+        [disabled]="true"
+        matInput>
+        <mat-icon matSuffix>password</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <div class="btns">
+      <button (click)="delete()" class="btnForm" mat-stroked-button color="primary">Deletar</button>
+    </div>
+
+  </form>
+</div>
