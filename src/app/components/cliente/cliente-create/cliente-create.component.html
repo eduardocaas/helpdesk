@@ -1,0 +1,83 @@
+<div class="container mat-elevation-z8">
+  <form action="" class="form">
+    <button routerLink="../" mat-stroked-button color="primary">Retornar</button>
+    <h1>Cadastro de Cliente</h1>
+    
+    <img class="fullWidth" src="assets/img/cliente-create.svg" alt="HelpDesk">
+
+    <section class="section">
+      <mat-checkbox (click)="addPerfil(0)" color="primary" class="margin">Admin</mat-checkbox>
+      <mat-checkbox (click)="addPerfil(1)" [checked]="true" color="success" class="margin">Cliente</mat-checkbox>
+      <mat-checkbox (click)="addPerfil(2)" color="accent" class="margin">Cliente</mat-checkbox>
+    </section>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input 
+        [formControl]="nome" 
+        [(ngModel)]="cliente.nome"
+        name="nome"
+        required 
+        matInput 
+        placeholder="Ex. Fulano">
+        <mat-error *ngIf="nome.invalid">{{getErrorMessageNome()}}</mat-error>
+        <mat-icon matSuffix>account_circle</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input 
+        [formControl]="cpf"
+        [(ngModel)]="cliente.cpf"
+        name="cpf" 
+        required 
+        matInput 
+        placeholder="Ex. 000.000.000-00" 
+        mask="000.000.000-00">
+        <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>
+        <mat-icon matSuffix>pin</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input 
+        [formControl]="email"
+        [(ngModel)]="cliente.email"
+        name="email" 
+        required 
+        type="email" 
+        matInput 
+        placeholder="Ex. nome@email.com">
+        <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input 
+        [formControl]="senha" 
+        [(ngModel)]="cliente.senha"
+        name="senha"
+        required 
+        type="password" 
+        matInput 
+        placeholder="Ex. 123">
+        <mat-error *ngIf="senha.invalid">{{getErrorMessagePassword()}}</mat-error>
+        <mat-icon matSuffix>password</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <div class="btns">
+      <button (click)="create()" [disabled]="!validaCampos()" class="btnForm" mat-stroked-button color="primary">Cadastrar</button>
+      <button (click)="limparCampos()" mat-stroked-button class="btnForm" color="warn">Limpar</button>
+    </div>
+
+  </form>
+</div>

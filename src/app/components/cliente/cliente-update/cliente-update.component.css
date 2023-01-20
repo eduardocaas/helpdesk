@@ -1,0 +1,40 @@
+.container {
+  width: 35rem;
+  margin: -30px auto;
+  padding: 1rem 1rem 3rem 1rem;
+  background-color: rgb(235, 235, 235);
+  border-radius: .2rem;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.section {
+  margin: 1rem 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btns {
+  display: flex;
+}
+
+.btnForm {
+  margin-right: .3rem;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  height: 9rem;
+  margin: auto;
+}
+
+
+mat-icon {
+  opacity: .6;
+}
