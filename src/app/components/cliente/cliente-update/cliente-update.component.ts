@@ -35,6 +35,7 @@ export class ClienteUpdateComponent implements OnInit {
 
   findById(): void {
     this.service.findById(this.cliente.id).subscribe(resposta => {
+      resposta.perfis = [];
       this.cliente = resposta;
     });
   }

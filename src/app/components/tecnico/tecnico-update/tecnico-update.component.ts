@@ -13,6 +13,7 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
 export class TecnicoUpdateComponent implements OnInit {
 
   tecnico: Tecnico = {
+    id: '',
     nome: '',
     cpf: '',
     email: '',
@@ -29,12 +30,13 @@ export class TecnicoUpdateComponent implements OnInit {
   constructor(private service: TecnicoService, private toast: ToastrService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.tecnico.id = this.route.snapshot.paramMap.get('id');
+    this.tecnico.id = this.route.snapshot.paramMap.get('id'); // Pega id na url
     this.findById();
   }
 
   findById(): void {
     this.service.findById(this.tecnico.id).subscribe(resposta => {
+      resposta.perfis = [];
       this.tecnico = resposta;
     });
   }
