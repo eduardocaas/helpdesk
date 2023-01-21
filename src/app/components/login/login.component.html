@@ -12,7 +12,7 @@
       <input [(ngModel)]="creds.senha" name="senha" matInput [type]="hide ? 'password' : 'text'" placeholder="Ex. 123" [formControl]="senha" required>
       <mat-error *ngIf="senha.invalid">{{getErrorMessagePassword()}}</mat-error>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide">
+        [attr.aria-pressed]="hide" type="button">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
