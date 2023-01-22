@@ -1,0 +1,40 @@
+.container {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.btnP {
+  margin: 0 0 10px 0;
+}
+
+.edit {
+  color: rgb(61, 113, 209);
+}
+
+.view {
+  color: rgb(139, 139, 139);
+}
+
+.flex {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status {
+  margin-left: 15px;
+}
+
+table {
+  width: 100%;
+}
+
+mat-radio-group {
+  margin-top: 10px;
+}
+
