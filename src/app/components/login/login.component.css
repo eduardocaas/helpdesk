@@ -36,4 +36,7 @@ mat-form-field {
 #btnLogar {
   margin-top: .5rem;
   background-color: rgb(226, 226, 226);
+  height: 50px;
+  border-radius: 0px;
+  border: none;
 }

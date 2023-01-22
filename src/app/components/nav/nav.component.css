@@ -12,7 +12,8 @@
 }
 
 .sidenav i {
-	margin-right: .6rem; 
+	margin-right: .6rem;
+	vertical-align: bottom; 
 }
 
 .menu {
