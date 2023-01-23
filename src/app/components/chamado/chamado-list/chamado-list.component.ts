@@ -70,7 +70,10 @@ export class ChamadoListComponent implements OnInit {
     this.ELEMENT_DATA.forEach(element => {
       if (element.status == status) {
         list.push(element);
+      } else if (status == 3) {
+        list.push(element);
       }
+
     });
     this.FILTERED_DATA = list;
     this.dataSource = new MatTableDataSource<Chamado>(list);
