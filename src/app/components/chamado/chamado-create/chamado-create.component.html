@@ -6,55 +6,61 @@
   <form class="form">
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Titulo do chamado</mat-label>
-      <input matInput placeholder="Ex. Computador não liga">
+      <input required [formControl]="titulo" matInput placeholder="Ex. Computador não liga">
+      <mat-error *ngIf="titulo.invalid">{{getErrorMessageTitulo()}}</mat-error>
     </mat-form-field>
   </form>
 
   <div class="status-prioridade">
     <mat-form-field appearance="outline">
       <mat-label>Selecione um status</mat-label>
-      <mat-select>
+      <mat-select required [formControl]="status">
         <mat-option value="0">ABERTO</mat-option>
         <mat-option value="1">EM ANDAMENTO</mat-option>
         <mat-option value="2">ENCERRADO</mat-option>
       </mat-select>
+      <mat-error *ngIf="status.invalid">{{getErrorMessageStatus()}}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Selecione uma prioridade</mat-label>
-      <mat-select>
+      <mat-select required [formControl]="prioridade">
         <mat-option value="0">BAIXA</mat-option>
         <mat-option value="1">MÉDIA</mat-option>
         <mat-option value="2">ALTA</mat-option>
       </mat-select>
+      <mat-error *ngIf="prioridade.invalid">{{getErrorMessagePrioridade()}}</mat-error>
     </mat-form-field>
   </div>
 
   <div class="tecnico">
     <mat-form-field  class="full-width" appearance="outline">
       <mat-label>Selecione um técnico</mat-label>
-      <mat-select>
+      <mat-select required [formControl]="tecnico">
         <mat-option value="0">Teste técnico</mat-option>
       </mat-select>
+      <mat-error *ngIf="tecnico.invalid">{{getErrorMessageTecnico()}}</mat-error>
     </mat-form-field>
   </div>
 
   <div class="cliinte">
     <mat-form-field  class="full-width" appearance="outline">
       <mat-label>Selecione um cliente</mat-label>
-      <mat-select>
+      <mat-select required [formControl]="cliente" >
         <mat-option value="0">Teste cliente</mat-option>
       </mat-select>
+      <mat-error *ngIf="cliente.invalid">{{getErrorMessageCliente()}}</mat-error>
     </mat-form-field>
   </div>
 
   <form class="form">
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Deixe uma descrição</mat-label>
-      <textarea class="desc" matInput placeholder="Ex. computador fora da tomada..."></textarea>
+      <textarea required [formControl]="descricao" class="desc" matInput placeholder="Ex. computador fora da tomada..."></textarea>
+      <mat-error *ngIf="descricao.invalid">{{getErrorMessageDescricao()}}</mat-error>
     </mat-form-field>
   </form>
 
-  <button mat-raised-button color="primary">Cadastrar</button>
-  <button mat-raised-button color="accent">Limpar</button>
+  <button mat-raised-button color="primary" [disabled]="!validaCampos()">Cadastrar</button>
+  <button mat-raised-button color="accent" (click)="limparCampos()">Limpar</button>
 
 </div>
