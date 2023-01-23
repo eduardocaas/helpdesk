@@ -34,3 +34,7 @@ button {
   width: 10rem;
   margin-right: 5px;
 }
+
+mat-form-field {
+  margin: .3rem 0 .3rem 0;
+}
