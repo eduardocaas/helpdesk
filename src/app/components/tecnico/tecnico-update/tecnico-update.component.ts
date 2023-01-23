@@ -49,10 +49,10 @@ export class TecnicoUpdateComponent implements OnInit {
     }, err => {
       if(err.error.errors) {
         err.error.errors.forEach(element => {
-          this.toast.error(element.message, 'Erro', { timeOut: 6000});
+          this.toast.error(element.message, 'Erro ao atualizar', { timeOut: 6000});
         });
       } else {
-        this.toast.error(err.error.message, 'Erro', { timeOut: 6000});
+        this.toast.error(err.error.message, 'Erro ao atualizar', { timeOut: 6000});
       }     
     });
   }

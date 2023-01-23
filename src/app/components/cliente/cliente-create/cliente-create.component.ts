@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
@@ -25,21 +26,22 @@ export class ClienteCreateComponent implements OnInit {
   email: FormControl = new FormControl(null, [Validators.required, Validators.email, Validators.maxLength(80)]);
   senha: FormControl =  new FormControl(null, [Validators.required, Validators.minLength(5), Validators.maxLength(50)]);
   
-  constructor(private service: ClienteService, private toast: ToastrService) { }
+  constructor(private service: ClienteService, private toast: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   create(): void {
     this.service.create(this.cliente).subscribe(resposta => {
-      this.toast.success('Cliente criado com sucesso!', 'Cadastro', { timeOut: 6000});
+      this.toast.success('Cliente ' + this.cliente.nome.toUpperCase() + ' criado com sucesso!', 'Cadastro', { timeOut: 6000});
+      this.router.navigate(['clientes']);
     }, err => {
       if(err.error.errors) {
         err.error.errors.forEach(element => {
-          this.toast.error(element.message, 'Erro', { timeOut: 6000});
+          this.toast.error(element.message, 'Erro ao cadastrar', { timeOut: 6000});
         });
       } else {
-        this.toast.error(err.error.message, 'Erro', { timeOut: 6000});
+        this.toast.error(err.error.message, 'Erro ao cadastrar', { timeOut: 6000});
       }     
     });
   }
