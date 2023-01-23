@@ -1,0 +1,60 @@
+<div class="container mat-elevation-z8">
+  <button routerLink="../" mat-stroked-button color="primary">Retornar</button>
+  <h1 class="full-width">Cadastro de Chamado</h1>
+  <img class="full-width" src="assets/img/chamado-create.svg" alt="Imagem Chamado">
+
+  <form class="form">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Titulo do chamado</mat-label>
+      <input matInput placeholder="Ex. Computador não liga">
+    </mat-form-field>
+  </form>
+
+  <div class="status-prioridade">
+    <mat-form-field appearance="outline">
+      <mat-label>Selecione um status</mat-label>
+      <mat-select>
+        <mat-option value="0">ABERTO</mat-option>
+        <mat-option value="1">EM ANDAMENTO</mat-option>
+        <mat-option value="2">ENCERRADO</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Selecione uma prioridade</mat-label>
+      <mat-select>
+        <mat-option value="0">BAIXA</mat-option>
+        <mat-option value="1">MÉDIA</mat-option>
+        <mat-option value="2">ALTA</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="tecnico">
+    <mat-form-field  class="full-width" appearance="outline">
+      <mat-label>Selecione um técnico</mat-label>
+      <mat-select>
+        <mat-option value="0">Teste técnico</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="cliinte">
+    <mat-form-field  class="full-width" appearance="outline">
+      <mat-label>Selecione um cliente</mat-label>
+      <mat-select>
+        <mat-option value="0">Teste cliente</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <form class="form">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Deixe uma descrição</mat-label>
+      <textarea class="desc" matInput placeholder="Ex. computador fora da tomada..."></textarea>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button color="primary">Cadastrar</button>
+  <button mat-raised-button color="accent">Limpar</button>
+
+</div>
