@@ -74,7 +74,13 @@ export class ChamadoCreateComponent implements OnInit {
     });
   }
 
-  limparCampos(): void {   
+  limparCampos(): void {
+    this.chamado.titulo = '';
+    this.chamado.status = '';
+    this.chamado.prioridade = '';
+    this.chamado.tecnico = '';
+    this.chamado.cliente = '';
+    this.chamado.observacoes = '';
   }
 
   validaCampos(): boolean {
