@@ -44,7 +44,7 @@ export class ChamadoListComponent implements OnInit {
     } else if (status == 1) {
       return "ANDAMENTO";
     } else if (status == 2) {
-      return "FECHADO";
+      return "ENCERRADO";
     } else {
     return "NÃO INFORMADO";
     }
