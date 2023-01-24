@@ -70,7 +70,7 @@
         <mat-radio-button (click)="orderByStatus(0)" value="0">ABERTO</mat-radio-button>
         <mat-radio-button (click)="orderByStatus(1)" value="1">ANDAMENTO</mat-radio-button>
         <mat-radio-button (click)="orderByStatus(2)" value="2">ENCERRADO</mat-radio-button>
-        <mat-radio-button (click)="orderByStatus(3)" value="3">TODOS</mat-radio-button>
+        <mat-radio-button (click)="orderByStatus(3)" [checked]="true" value="3">TODOS</mat-radio-button>
       </mat-radio-group>
       <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </div>

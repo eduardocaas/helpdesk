@@ -37,3 +37,7 @@ img {
 mat-icon {
   opacity: .6;
 }
+
+input {
+  background-color: red;
+}

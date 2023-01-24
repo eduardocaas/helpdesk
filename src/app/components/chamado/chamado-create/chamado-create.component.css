@@ -26,6 +26,10 @@ h1, img {
   text-align: center;
 }
 
+h1 {
+  padding: .4rem 0 .4rem 0;
+}
+
 img {
   height: 15rem;
 }
