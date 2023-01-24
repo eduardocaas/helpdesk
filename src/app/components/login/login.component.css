@@ -33,6 +33,10 @@ mat-form-field {
   margin: .5rem 0 .5rem 0;
 }
 
+mat-icon {
+  opacity: .6;
+}
+
 #btnLogar {
   margin-top: .5rem;
   background-color: rgb(226, 226, 226);
