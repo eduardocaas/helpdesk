@@ -1,4 +1,6 @@
 # Helpdesk
 
-Pode ser acessado em: https://helpdesk-coral.vercel.app/
-Login: login@email.com  Senha: login123   -> para testes
+### Pode ser acessado em: https://helpdesk-coral.vercel.app/ <br><br>
+> Login para teste
+>> Login: login@email.com <p>
+>> Senha: login123
